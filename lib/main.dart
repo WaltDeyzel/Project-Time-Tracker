@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           primaryColor: Color.fromARGB(0xFF, 128, 14, 28),),
         title: "Title",
-        home: ProjectsScreen(),
+        home: ModulesScreen(),
         routes: {
-          ProjectScreen.routeName: (ctx) => ProjectScreen(),
+          ModuleScreen.routeName: (ctx) => ModuleScreen(),
         },
       ),
     );

@@ -23,9 +23,4 @@ class Modules with ChangeNotifier{
   Module findModuleById(String projectId){
     return _items.firstWhere((element) => element.id == projectId);
   }
-
-  List<Module> findsubModuleListById(String projectId){
-    return _items.firstWhere((element) => element.id == projectId).projects;
-  }
-
 }

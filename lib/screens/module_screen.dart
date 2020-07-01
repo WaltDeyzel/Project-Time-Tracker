@@ -2,27 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/modules.dart';
+import '../widgets/projects_grid.dart';
 
-class ProjectScreen extends StatelessWidget {
-  static const routeName = '/project';
+class ModuleScreen extends StatelessWidget {
+  static const routeName = '/module';
 
   @override
   Widget build(BuildContext context) {
     final projectId = ModalRoute.of(context).settings.arguments as String;
-    final selectedProject = Provider.of<Modules>(context).findModuleById(projectId);
+    final selectedModule =
+        Provider.of<Modules>(context).findModuleById(projectId);
     return Scaffold(
-      appBar: AppBar(title: Text(selectedProject.title),
-      backgroundColor: Theme.of(context).backgroundColor,),
-      body: Column(
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            height: 150,
-            color: Theme.of(context).primaryColor,
-          ),
-
-        ],
+      appBar: AppBar(
+        title: Text(selectedModule.title),
+        backgroundColor: Theme.of(context).backgroundColor,
       ),
+      body: ProjectsGrid(selectedModule.getSubProjects()),
+      backgroundColor: Colors.black,
     );
   }
 }

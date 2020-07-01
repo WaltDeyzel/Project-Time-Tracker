@@ -5,12 +5,12 @@ import '../models/modules.dart';
 import '../widgets/module_tile.dart';
 import '../widgets/add_module.dart';
 
-class ProjectsScreen extends StatefulWidget {
+class ModulesScreen extends StatefulWidget {
   @override
-  _ProjectsScreenState createState() => _ProjectsScreenState();
+  _ModulesScreenState createState() => _ModulesScreenState();
 }
 
-class _ProjectsScreenState extends State<ProjectsScreen> {
+class _ModulesScreenState extends State<ModulesScreen> {
   void _addProject(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -34,7 +34,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Padding(
         padding: EdgeInsets.all(10),
-        child: projectData.items.length < 0
+        child: projectData.items.length == 0
             ? Text('Add some projects')
             : ListView.builder(
                 itemCount: projectData.items.length,
@@ -43,7 +43,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                     children: <Widget>[
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed(ProjectScreen.routeName, arguments: projectData.items[index].id);
+                          Navigator.of(context).pushNamed(ModuleScreen.routeName, arguments: projectData.items[index].id);
                         },
                         child: ProjectTile(
                           projectData.items[index].id,
