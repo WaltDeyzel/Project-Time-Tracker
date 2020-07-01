@@ -8,10 +8,11 @@ class ProjectsGridTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.of(context).pushNamed(TimeStampsScreen.routeName);
-        },
-          child: Container(
+      onTap: () {
+        Navigator.of(context).pushNamed(TimeStampsScreen.routeName,
+            arguments: project.getTimeStamps());
+      },
+      child: Container(
         color: Colors.pink,
         child: GridTile(
           child: Container(

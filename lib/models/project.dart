@@ -5,11 +5,40 @@ class Project with ChangeNotifier {
   final String id;
   final String title;
   double time;
-  List<TimeStamps> records = [];
+  List<TimeStamps> timeStamps = [
+    TimeStamps(
+      id: DateTime.now().toString(),
+      startTime: DateTime.now(),
+      endTime: DateTime.now(),
+      note: "This is a note",
+    ),
+    TimeStamps(
+      id: DateTime.now().toString(),
+      startTime: DateTime.now(),
+      endTime: DateTime.now(),
+      note: "This is a note",
+    ),
+    TimeStamps(
+      id: DateTime.now().toString(),
+      startTime: DateTime.now(),
+      endTime: DateTime.now(),
+      note: "This is a note",
+    ),
+    TimeStamps(
+      id: DateTime.now().toString(),
+      startTime: DateTime.now(),
+      endTime: DateTime.now(),
+      note: "This is a note",
+    ),
+  ];
 
   Project({
     @required this.id,
     @required this.title,
     this.time = 0,
   });
+
+  List<TimeStamps> getTimeStamps(){
+    return timeStamps;
+  }
 }
