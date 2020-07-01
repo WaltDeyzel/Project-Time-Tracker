@@ -5,6 +5,7 @@ class Module with ChangeNotifier{
   final String title;
   double time;
   int numberOfSubProjects;
+  List<Module> projects;
 
   Module({
     @required this.id,

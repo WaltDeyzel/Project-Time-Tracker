@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'module.dart';
 
-class Projects with ChangeNotifier{
+class Modules with ChangeNotifier{
   List<Module> _items = [
     Module(id: 'a1', time: 120.0, title: "Electronics", numberOfSubProjects: 3),
     Module(id: 'a2', time: 10.0, title: "Controls", numberOfSubProjects: 1),
@@ -15,13 +15,17 @@ class Projects with ChangeNotifier{
     return [..._items]; //returns copy of _items into a new list
   }
 
-  void addProject(Module add){
+  void addModule(Module add){
     _items.add(add);
     notifyListeners();
   }
 
-  Module findProjectById(String projectId){
+  Module findModuleById(String projectId){
     return _items.firstWhere((element) => element.id == projectId);
+  }
+
+  List<Module> findsubModuleListById(String projectId){
+    return _items.firstWhere((element) => element.id == projectId).projects;
   }
 
 }

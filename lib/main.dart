@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'models/modules.dart';
-import 'screens/projects_screen.dart';
-import './screens/project_screen.dart';
+import 'screens/modules_screen.dart';
+import 'screens/module_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => Projects(),
+          create: (context) => Modules(),
         ),
       ],
       child: MaterialApp(

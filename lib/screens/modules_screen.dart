@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../screens/project_screen.dart';
+import 'module_screen.dart';
 import '../models/modules.dart';
-import '../widgets/project_tile.dart';
-import '../widgets/add_project.dart';
+import '../widgets/module_tile.dart';
+import '../widgets/add_module.dart';
 
 class ProjectsScreen extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final projectData = Provider.of<Projects>(context);
+    final projectData = Provider.of<Modules>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Projects"),

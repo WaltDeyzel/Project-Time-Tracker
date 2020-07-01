@@ -13,17 +13,17 @@ class _AddProjectState extends State<AddProject> {
 
   final _form = GlobalKey<FormState>();
 
-  void _saveForm(Projects projects){
+  void _saveForm(Modules projects){
     final isValid = _form.currentState.validate();
     if(!isValid) return;
     _form.currentState.save();
-    projects.addProject(_newProject);
+    projects.addModule(_newProject);
     print(_newProject.title);
   }
 
   @override
   Widget build(BuildContext context) {
-    var projects = Provider.of<Projects>(context);
+    var projects = Provider.of<Modules>(context);
     return Container(
       color: Colors.pink,
       child: Form(

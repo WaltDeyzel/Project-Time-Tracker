@@ -9,7 +9,7 @@ class ProjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final projectId = ModalRoute.of(context).settings.arguments as String;
-    final selectedProject = Provider.of<Projects>(context).findProjectById(projectId);
+    final selectedProject = Provider.of<Modules>(context).findModuleById(projectId);
     return Scaffold(
       appBar: AppBar(title: Text(selectedProject.title),
       backgroundColor: Theme.of(context).backgroundColor,),
