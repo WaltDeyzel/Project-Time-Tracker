@@ -24,28 +24,31 @@ class _AddProjectState extends State<AddProject> {
   @override
   Widget build(BuildContext context) {
     var projects = Provider.of<Projects>(context);
-    return Form(
-      key: _form,
-      child: ListView(
-        children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: "Title", //alot of options
+    return Container(
+      color: Colors.pink,
+      child: Form(
+        key: _form,
+        child: ListView(
+          children: <Widget>[
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Title", //alot of options
+              ),
+              
+              validator: (value){
+                if(value.isEmpty)
+                  return "Please add a Title.";
+                return null;
+              },
+              onSaved: (newValue) {
+                _newProject = Project(id: 'A', title: newValue);
+              },
+              onFieldSubmitted: (_) {
+                _saveForm(projects);
+              },
             ),
-            
-            validator: (value){
-              if(value.isEmpty)
-                return "Please add a Title.";
-              return null;
-            },
-            onSaved: (newValue) {
-              _newProject = Project(id: 'A', title: newValue);
-            },
-            onFieldSubmitted: (_) {
-              _saveForm(projects);
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
