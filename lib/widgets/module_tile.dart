@@ -11,7 +11,6 @@ class ProjectTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-    
       child: Container(
         width: double.infinity,
         height: 50,
@@ -22,8 +21,10 @@ class ProjectTile extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(left: 10, top: 5),
-              child: Text(title,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
+              child: Text(
+                title,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(right: 5),

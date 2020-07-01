@@ -5,7 +5,6 @@ import '../models/project.dart';
 import './projects_grid_tile.dart';
 
 class ProjectsGrid extends StatelessWidget {
-
   final List<Project> projects;
   ProjectsGrid(this.projects);
 
@@ -16,11 +15,12 @@ class ProjectsGrid extends StatelessWidget {
       itemCount: projects.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        childAspectRatio: 1 / 1,
+        crossAxisSpacing: 15,
+        mainAxisSpacing: 15,
       ),
-      itemBuilder: (ctx, i) => ChangeNotifierProvider.value( // Use .value when dealing with lists or grids. When re using a existing object.
+      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+        // Use .value when dealing with lists or grids. When re using a existing object.
         value: projects[i], //change create to value if using .vlaue {It fixes bugs when widgets are off screen.}
         child: ProjectsGridTile(projects[i]),
       ),

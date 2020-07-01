@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class TimeStamps with ChangeNotifier{
+class TimeStamps with ChangeNotifier {
   final String id;
   final DateTime startTime;
   final DateTime endTime;

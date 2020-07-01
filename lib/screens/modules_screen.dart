@@ -5,12 +5,7 @@ import '../models/modules.dart';
 import '../widgets/module_tile.dart';
 import '../widgets/add_module.dart';
 
-class ModulesScreen extends StatefulWidget {
-  @override
-  _ModulesScreenState createState() => _ModulesScreenState();
-}
-
-class _ModulesScreenState extends State<ModulesScreen> {
+class ModulesScreen extends StatelessWidget {
   void _addProject(BuildContext context) {
     showModalBottomSheet(
         context: context,
