@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import './models/projects.dart';
+import 'models/modules.dart';
 import 'screens/projects_screen.dart';
 import './screens/project_screen.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-          backgroundColor: Colors.black45,
+          backgroundColor: Colors.black,
           primaryColor: Color.fromARGB(0xFF, 128, 14, 28),),
         title: "Title",
         home: ProjectsScreen(),

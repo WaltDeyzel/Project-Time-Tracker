@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/project.dart';
-import '../models/projects.dart' ;
+import '../models/module.dart';
+import '../models/modules.dart' ;
 
 class AddProject extends StatefulWidget {
   @override
@@ -9,7 +9,7 @@ class AddProject extends StatefulWidget {
 }
 
 class _AddProjectState extends State<AddProject> {
-  var _newProject = Project(id: '', title: '');
+  var _newProject = Module(id: '', title: '');
 
   final _form = GlobalKey<FormState>();
 
@@ -41,7 +41,7 @@ class _AddProjectState extends State<AddProject> {
                 return null;
               },
               onSaved: (newValue) {
-                _newProject = Project(id: 'A', title: newValue);
+                _newProject = Module(id: 'A', title: newValue);
               },
               onFieldSubmitted: (_) {
                 _saveForm(projects);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../screens/project_screen.dart';
-import '../models/projects.dart';
+import '../models/modules.dart';
 import '../widgets/project_tile.dart';
 import '../widgets/add_project.dart';
 

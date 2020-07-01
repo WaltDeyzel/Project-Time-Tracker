@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Project with ChangeNotifier{
+class Module with ChangeNotifier{
   final String id;
   final String title;
   double time;
   int numberOfSubProjects;
 
-  Project({
+  Module({
     @required this.id,
     @required this.title,
     this.time = 0,
