@@ -15,4 +15,9 @@ class Projects with ChangeNotifier{
     return [..._items]; //returns copy of _items into a new list
   }
 
+  void addProject(Project add){
+    _items.add(add);
+    notifyListeners();
+  }
+
 }

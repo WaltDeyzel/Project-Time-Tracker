@@ -12,13 +12,15 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-         create: (context) => Projects(),
+          create: (context) => Projects(),
         ),
       ],
-        child: MaterialApp(
-        title: "Title",   
+      child: MaterialApp(
+        theme: ThemeData(
+          backgroundColor: Colors.black45,
+          primaryColor: Color.fromARGB(0xFF, 128, 14, 28),),
+        title: "Title",
         home: ProjectsScreen(),
-        
       ),
     );
   }
