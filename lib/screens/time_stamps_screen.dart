@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/time_stamps.dart';
+import '../models/project.dart';
 import '../screens/timer_screen.dart';
 
 class TimeStampsScreen extends StatelessWidget {
@@ -7,8 +8,9 @@ class TimeStampsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final timeStamps =
-        ModalRoute.of(context).settings.arguments as List<TimeStamps>;
+    final project =
+        ModalRoute.of(context).settings.arguments as Project;
+    final List<TimeStamps> timeStamps = project.getTimeStamps();
     return Scaffold(
       appBar: AppBar(
         title: Text("Time Stamps"),
@@ -38,7 +40,7 @@ class TimeStampsScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.access_alarm), onPressed: () {
-        Navigator.of(context).pushNamed(TimerScreen.routeName);
+        Navigator.of(context).pushReplacementNamed(TimerScreen.routeName, arguments: project);
       },),
     );
   }
