@@ -27,7 +27,7 @@ class Project with ChangeNotifier {
     TimeStamps(
       id: DateTime.now().toString(),
       startTime: DateTime.now(),
-      endTime: DateTime.now(),
+      endTime: DateTime.parse("2020-07-02 09:09:04Z"),
       note: "This is a note",
     ),
   ];

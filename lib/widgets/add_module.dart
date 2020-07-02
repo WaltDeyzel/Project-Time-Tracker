@@ -45,6 +45,7 @@ class _AddProjectState extends State<AddProject> {
               },
               onFieldSubmitted: (_) {
                 _saveForm(projects);
+                Navigator.of(context).pop();
               },
             ),
           ],

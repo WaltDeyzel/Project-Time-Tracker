@@ -8,14 +8,15 @@ import '../widgets/add_module.dart';
 class ModulesScreen extends StatelessWidget {
   void _addProject(BuildContext context) {
     showModalBottomSheet(
-        context: context,
-        builder: (ctx) {
-          return GestureDetector(
-            onTap: () {},
-            child: AddProject(),
-            behavior: HitTestBehavior.opaque,
-          );
-        });
+      context: context,
+      builder: (ctx) {
+        return GestureDetector(
+          onTap: () {},
+          child: AddProject(),
+          behavior: HitTestBehavior.opaque,
+        );
+      },
+    );
   }
 
   @override
@@ -38,7 +39,9 @@ class ModulesScreen extends StatelessWidget {
                     children: <Widget>[
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).pushNamed(ModuleScreen.routeName, arguments: projectData.items[index].id);
+                          Navigator.of(context).pushNamed(
+                              ModuleScreen.routeName,
+                              arguments: projectData.items[index].id);
                         },
                         child: ProjectTile(
                           projectData.items[index].id,
@@ -52,12 +55,11 @@ class ModulesScreen extends StatelessWidget {
                   );
                 }),
       ),
-      floatingActionButton: IconButton(
-        icon: Icon(Icons.add),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
         onPressed: () {
           _addProject(context);
         },
-        color: Theme.of(context).primaryColor,
       ),
     );
   }

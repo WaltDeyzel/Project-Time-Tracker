@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 import '../models/time_stamps.dart';
+import '../screens/timer_screen.dart';
 
 class TimeStampsScreen extends StatelessWidget {
   static const routeName = '/time-stamps';
@@ -21,11 +20,16 @@ class TimeStampsScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.only(bottom: 10),
+            height: 100,
             color: Colors.pink,
             child: Column(children: <Widget>[
               Text(
-                DateFormat('dd/mm/yyyy hh:mm')
-                    .format(timeStamps[index].startTime),
+                timeStamps[index]
+                        .endTime
+                        .difference(timeStamps[index].startTime)
+                        .inMinutes
+                        .toString() +
+                    " min",
               ),
               Divider(),
               Text(timeStamps[index].note),
@@ -33,6 +37,9 @@ class TimeStampsScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.access_alarm), onPressed: () {
+        Navigator.of(context).pushNamed(TimerScreen.routeName);
+      },),
     );
   }
 }
