@@ -13,31 +13,31 @@ class ProjectTile extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Container(
         width: double.infinity,
-        height: 50,
-        color: Colors.pinkAccent,
+        height: 100,
+        color: Colors.white10,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(left: 10, top: 5),
+              margin: const EdgeInsets.only(left: 10, top: 5),
               child: Text(
                 title,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(right: 5),
+              margin: const EdgeInsets.only(right: 5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     time.toString(),
-                    style: TextStyle(fontWeight: FontWeight.w200),
+                    style: TextStyle(fontWeight: FontWeight.w200, color: Colors.white),
                   ),
                   Text(
                     numberOfSubProjects.toString(),
-                    style: TextStyle(fontWeight: FontWeight.w200),
+                    style: TextStyle(fontWeight: FontWeight.w200, color: Colors.white),
                   ),
                 ],
               ),

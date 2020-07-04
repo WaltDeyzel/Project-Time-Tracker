@@ -13,13 +13,13 @@ class ProjectsGridTile extends StatelessWidget {
             arguments: project);
       },
       child: Container(
-        color: Colors.pink,
+        color: Colors.white10,
         child: GridTile(
           child: Container(
-            margin: EdgeInsets.only(left: 5, top: 5),
+            margin: const EdgeInsets.only(left: 5, top: 5),
             child: Text(
               project.title,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300, color: Colors.white70),
             ),
           ),
         ),

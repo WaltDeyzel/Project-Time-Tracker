@@ -24,7 +24,7 @@ class ModulesScreen extends StatelessWidget {
     final projectData = Provider.of<Modules>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Projects"),
+        title: Text("Projects", style: TextStyle(fontSize: 40),),
         backgroundColor: Theme.of(context).backgroundColor,
       ),
       backgroundColor: Theme.of(context).backgroundColor,

@@ -14,11 +14,11 @@ class ModuleScreen extends StatelessWidget {
         Provider.of<Modules>(context).findModuleById(projectId);
     return Scaffold(
       appBar: AppBar(
-        title: Text(selectedModule.title),
+        title: Text(selectedModule.title, style: TextStyle(fontSize: 40),),
         backgroundColor: Theme.of(context).backgroundColor,
       ),
       body: ProjectsGrid(selectedModule.getSubProjects()),
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).backgroundColor,
     );
   }
 }

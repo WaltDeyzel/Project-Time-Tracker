@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData(
-          backgroundColor: Colors.black,
-          primaryColor: Color.fromARGB(0xFF, 128, 14, 28),),
+          fontFamily: 'BebasNeue',
+          backgroundColor:Colors.black,
+          primaryColor: Color.fromARGB(0xFF, 128, 14, 28),
+          ),
         title: "Title",
         home: ModulesScreen(),
         routes: {

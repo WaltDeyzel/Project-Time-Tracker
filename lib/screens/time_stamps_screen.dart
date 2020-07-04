@@ -13,15 +13,15 @@ class TimeStampsScreen extends StatelessWidget {
     final List<TimeStamps> timeStamps = project.getTimeStamps();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Time Stamps"),
-        backgroundColor: Colors.black,
+        title: const Text("Time Stamps", style: TextStyle(fontSize: 40),),
+        backgroundColor: Theme.of(context).backgroundColor,
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).backgroundColor,
       body: ListView.builder(
         itemCount: timeStamps.length,
         itemBuilder: (context, index) {
           return Card(
-            color: Colors.pink,
+            color: Colors.white10,
             child: Column(children: <Widget>[
               Container(
                 height: 25,
@@ -37,8 +37,9 @@ class TimeStampsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(),
-              Text(timeStamps[index].note),
+              Divider(color: Colors.white,),
+              Text(timeStamps[index].note, style: TextStyle(color: Colors.white, fontFamily: 'Lato'),),
+              Divider(color: Colors.white, thickness: 2,),
             ]),
           );
         },
@@ -58,24 +59,25 @@ Widget duration(TimeStamps timeStamps) {
   Duration time = timeStamps.endTime.difference(timeStamps.startTime);
   if (time.inHours > 0)
     return Text(
-      time.inHours.toString() +
+      (time.inHours.toString() +
           "h " +
           (time.inMinutes % 60).toString() +
           "min " +
           (time.inSeconds % 60).toString() +
-          "s",
+          "s"),
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white),
     );
   return Text(
     ((time.inMinutes % 60).toString().padLeft(1, "0") +
         "min " +
         (time.inSeconds % 60).toString().padLeft(2, "0") +
         "s"),
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white),
   );
 }
 
 Widget date(TimeStamps timeStamps) {
   return Text(
       DateFormat(DateFormat.ABBR_MONTH_WEEKDAY_DAY).format(timeStamps.endTime),
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),);
+      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),);
 }
