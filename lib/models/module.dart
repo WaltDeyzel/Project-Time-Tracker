@@ -6,11 +6,7 @@ class Module with ChangeNotifier {
   final String title;
   double time;
   int numberOfSubProjects;
-  List<Project> _subProjects = [
-    Project(id: "B", title: "Title"),
-    Project(id: "B2", title: "Title2"),
-    Project(id: "B3", title: "Title3"),
-  ];
+  List<Project> _subProjects = [];
 
   Module({
     @required this.id,
@@ -21,5 +17,9 @@ class Module with ChangeNotifier {
 
   List<Project> getSubProjects() {
     return _subProjects;
+  }
+
+  void addProject(Project add){
+    _subProjects.add(add);
   }
 }

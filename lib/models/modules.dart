@@ -23,4 +23,8 @@ class Modules with ChangeNotifier{
   Module findModuleById(String projectId){
     return _items.firstWhere((element) => element.id == projectId);
   }
+
+  void notify(){
+    notifyListeners();
+  }
 }

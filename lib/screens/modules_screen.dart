@@ -12,7 +12,7 @@ class ModulesScreen extends StatelessWidget {
       builder: (ctx) {
         return GestureDetector(
           onTap: () {},
-          child: AddProject(),
+          child: AddModule(),
           behavior: HitTestBehavior.opaque,
         );
       },

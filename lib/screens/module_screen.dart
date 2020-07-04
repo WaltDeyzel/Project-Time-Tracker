@@ -3,9 +3,23 @@ import 'package:provider/provider.dart';
 
 import '../models/modules.dart';
 import '../widgets/projects_grid.dart';
+import '../widgets/add_project.dart';
 
 class ModuleScreen extends StatelessWidget {
   static const routeName = '/module';
+
+  void _addProject(BuildContext context, String id) {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) {
+        return GestureDetector(
+          onTap: () {},
+          child: AddProject(id),
+          behavior: HitTestBehavior.opaque,
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +33,12 @@ class ModuleScreen extends StatelessWidget {
       ),
       body: ProjectsGrid(selectedModule.getSubProjects()),
       backgroundColor: Theme.of(context).backgroundColor,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          _addProject(context, projectId);
+        },
+      ),
     );
   }
 }
