@@ -46,8 +46,8 @@ class ModulesScreen extends StatelessWidget {
                         child: ProjectTile(
                           projectData.items[index].id,
                           projectData.items[index].title,
-                          projectData.items[index].time,
-                          projectData.items[index].numberOfSubProjects,
+                          projectData.items[index].totalModuleTime(),
+                          projectData.items[index].numberOfSubProjects(),
                         ),
                       ),
                       Divider(),

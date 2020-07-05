@@ -4,15 +4,11 @@ import '../models/project.dart';
 class Module with ChangeNotifier {
   final String id;
   final String title;
-  double time;
-  int numberOfSubProjects;
   List<Project> _subProjects = [];
 
   Module({
     @required this.id,
     @required this.title,
-    this.time = 0,
-    this.numberOfSubProjects = 0,
   });
 
   List<Project> getSubProjects() {
@@ -21,5 +17,17 @@ class Module with ChangeNotifier {
 
   void addProject(Project add){
     _subProjects.add(add);
+  }
+
+  int numberOfSubProjects(){
+    return _subProjects.length;
+  }
+
+  int totalModuleTime(){
+    int total = 0;
+    for(int i = 0; i<_subProjects.length; i++){
+      total += _subProjects[i].totalProjectTime();
+    }
+    return total;
   }
 }

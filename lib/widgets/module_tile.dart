@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProjectTile extends StatelessWidget {
   final String id;
   final String title;
-  final double time;
+  final int time;
   final int numberOfSubProjects;
 
   ProjectTile(this.id, this.title, this.time, this.numberOfSubProjects);

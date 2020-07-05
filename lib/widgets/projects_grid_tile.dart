@@ -22,6 +22,7 @@ class ProjectsGridTile extends StatelessWidget {
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300, color: Colors.white70),
             ),
           ),
+          footer: Text('Time: ${project.totalProjectTime()%3600} sec', style: TextStyle(color: Colors.white70, fontFamily: 'Lato', fontSize: 15),),
         ),
       ),
     );

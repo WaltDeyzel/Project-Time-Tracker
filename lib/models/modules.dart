@@ -4,11 +4,11 @@ import 'module.dart';
 
 class Modules with ChangeNotifier{
   List<Module> _items = [
-    Module(id: 'a1', time: 120.0, title: "Electronics", numberOfSubProjects: 3),
-    Module(id: 'a2', time: 10.0, title: "Controls", numberOfSubProjects: 1),
-    Module(id: 'a3', time: 320.0, title: "Emags", numberOfSubProjects: 4),
-    Module(id: 'a4', time: 120.0, title: "Design", numberOfSubProjects: 3),
-    Module(id: 'a5', time: 150.0, title: "Signals", numberOfSubProjects: 2),
+    Module(id: 'a1', title: "Electronics"),
+    Module(id: 'a2', title: "Controls"),
+    Module(id: 'a3', title: "Emags"),
+    Module(id: 'a4', title: "Design"),
+    Module(id: 'a5', title: "Signals"),
   ];
 
   List<Module> get items {

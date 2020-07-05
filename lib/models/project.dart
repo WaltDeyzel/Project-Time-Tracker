@@ -4,7 +4,6 @@ import 'time_stamps.dart';
 class Project with ChangeNotifier {
   final String id;
   final String title;
-  double time;
   List<TimeStamps> _timeStamps = [
     
   ];
@@ -12,7 +11,6 @@ class Project with ChangeNotifier {
   Project({
     @required this.id,
     @required this.title,
-    this.time = 0,
   });
 
   List<TimeStamps> getTimeStamps(){
@@ -22,5 +20,13 @@ class Project with ChangeNotifier {
   void addTimeStamp(TimeStamps value){
     _timeStamps.add(value);
     notifyListeners();
+  }
+
+  int totalProjectTime(){
+    int total = 0;
+    for(int i = 0; i<_timeStamps.length; i++){
+      total += _timeStamps[i].timeLapsed();
+    }
+    return total;
   }
 }

@@ -12,4 +12,9 @@ class TimeStamps with ChangeNotifier {
     @required this.endTime,
     @required this.note,
   });
+
+  int timeLapsed(){
+    Duration lapsed = endTime.difference(startTime);
+    return lapsed.inSeconds;
+  }
 }
