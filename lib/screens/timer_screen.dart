@@ -1,8 +1,10 @@
 import 'dart:async';
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:timeTracker/models/time_stamps.dart';
+
+import '../models/time_stamps.dart';
 import '../models/project.dart';
+import '../models/modules.dart';
 
 class TimerScreen extends StatefulWidget {
   static const routeName = '/timer';
@@ -66,6 +68,7 @@ class _TimerScreenState extends State<TimerScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final project = ModalRoute.of(context).settings.arguments as Project;
+    final modules = Provider.of<Modules>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
@@ -117,10 +120,11 @@ class _TimerScreenState extends State<TimerScreen> {
                         _startOrPause != ButtonTimer.Pause) {
                       _form.currentState.save();
                       project.addTimeStamp(TimeStamps(
-                          id: DateTime.now().toString(),
+                          id: project.id,
                           startTime: _startTime,
                           endTime: _endTime,
                           note: _note.length == 0 ? "..." : _note));
+                      modules.notify();
                       Navigator.of(context).pop();
                     }
                   },

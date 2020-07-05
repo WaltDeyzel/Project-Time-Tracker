@@ -25,8 +25,8 @@ class _AddProjectState extends State<AddProject> {
 
   @override
   Widget build(BuildContext context) {
-    var modules = Provider.of<Modules>(context);
-    var module = Provider.of<Modules>(context).findModuleById(widget.id);
+    final modules = Provider.of<Modules>(context);
+    final module = Provider.of<Modules>(context).findModuleById(widget.id);
     return Container(
       color: Colors.black87,
       child: Form(
@@ -42,7 +42,7 @@ class _AddProjectState extends State<AddProject> {
                 return null;
               },
               onSaved: (newValue) {
-                _newProject = Project(id: 'A', title: newValue);
+                _newProject = Project(id: module.id, title: newValue);
               },
               onFieldSubmitted: (_) {
                 _saveForm(module);

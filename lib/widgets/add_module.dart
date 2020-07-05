@@ -13,19 +13,18 @@ class _AddModuleState extends State<AddModule> {
 
   final _form = GlobalKey<FormState>();
 
-  void _saveForm(Modules projects){
+  void _saveForm(Modules modules){
     final isValid = _form.currentState.validate();
     if(!isValid) return;
     _form.currentState.save();
-    projects.addModule(_newProject);
-    print(_newProject.title);
+    modules.addModule(_newProject);
   }
 
   @override
   Widget build(BuildContext context) {
-    var projects = Provider.of<Modules>(context);
+    var modules = Provider.of<Modules>(context);
     return Container(
-      color: Colors.pink,
+      color: Colors.grey,
       child: Form(
         key: _form,
         child: ListView(
@@ -44,7 +43,7 @@ class _AddModuleState extends State<AddModule> {
                 _newProject = Module(id: DateTime.now().toString(), title: newValue);
               },
               onFieldSubmitted: (_) {
-                _saveForm(projects);
+                _saveForm(modules);
                 Navigator.of(context).pop();
               },
             ),

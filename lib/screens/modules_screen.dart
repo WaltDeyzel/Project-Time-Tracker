@@ -21,7 +21,7 @@ class ModulesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final projectData = Provider.of<Modules>(context);
+    final module = Provider.of<Modules>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Projects", style: TextStyle(fontSize: 40),),
@@ -30,10 +30,10 @@ class ModulesScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).backgroundColor,
       body: Padding(
         padding: EdgeInsets.all(10),
-        child: projectData.items.length == 0
+        child: module.items.length == 0
             ? Text('Add some projects')
             : ListView.builder(
-                itemCount: projectData.items.length,
+                itemCount: module.items.length,
                 itemBuilder: (_, index) {
                   return Column(
                     children: <Widget>[
@@ -41,13 +41,13 @@ class ModulesScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).pushNamed(
                               ModuleScreen.routeName,
-                              arguments: projectData.items[index].id);
+                              arguments: module.items[index].id);
                         },
                         child: ProjectTile(
-                          projectData.items[index].id,
-                          projectData.items[index].title,
-                          projectData.items[index].totalModuleTime(),
-                          projectData.items[index].numberOfSubProjects(),
+                          module.items[index].id,
+                          module.items[index].title,
+                          module.items[index].totalModuleTime(),
+                          module.items[index].numberOfSubProjects(),
                         ),
                       ),
                       Divider(),
