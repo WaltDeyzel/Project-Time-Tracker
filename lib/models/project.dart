@@ -29,4 +29,13 @@ class Project with ChangeNotifier {
     }
     return total;
   }
+
+  String totalTime(int seconds){
+    int hours = (seconds/3600).floor();
+    int min = ((seconds - 3600*hours)/60).floor();
+    int sec = seconds - 3600*hours - min*60;
+    
+    return hours.toString().padLeft(0, '0') + ':' + min.toString().padLeft(0, '0') + ':' + sec.toString().padLeft(0, '0');
+    
+  }
 }

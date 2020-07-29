@@ -50,7 +50,7 @@ class ModulesScreen extends StatelessWidget {
                           module.items[index].numberOfSubProjects(),
                         ),
                       ),
-                      Divider(),
+                      SizedBox(height: 3),
                     ],
                   );
                 }),
